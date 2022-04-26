@@ -1,0 +1,16 @@
+[
+{
+  "modid": "thorfusioncompat",
+  "name": "TerralizationCompat",
+  "description": "Mod For Terralization modpack. This is a compability layer for our modpack, mainly adding mekanism recipes",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://thorfusion.com",
+  "updateUrl": "",
+  "authorList": ["Maggi373"],
+  "credits": "Maggi373",
+  "logoFile": "textures/items/bluradienstick.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
