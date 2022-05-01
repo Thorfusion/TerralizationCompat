@@ -1,15 +1,15 @@
-package com.thorfusion.titanpower;
+package com.thorfusion.terralizationcompat;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import mekanism.api.infuse.InfuseRegistry;
 import mekanism.api.recipe.RecipeHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.init.Items;
+import blusunrize.immersiveengineering.common.IEContent;
 
 
 
-public class TerralizationMekanismRecipes {
+public class TerralizationMekanismImmersiveRecipes {
     public static void init() {
-        RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(TitanpowerItems.blurod), new ItemStack(TitanpowerItems.bludust, 1));
+        RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(IEContent.itemMetal,1,18), new ItemStack(Items.quartz));
         /*
         if(TitanpowerConfig.EnableBluArmor) {
             GameRegistry.addRecipe(new ItemStack(TitanpowerArmour.Bluchest), new Object[]{"oxo", "ooo", "ooo", 'o', TitanpowerItems.bluplate});

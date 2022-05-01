@@ -1,4 +1,4 @@
-package com.thorfusion.titanpower;
+package com.thorfusion.terralizationcompat;
 
 
 import net.minecraftforge.common.config.Configuration;
@@ -6,6 +6,7 @@ import net.minecraftforge.common.config.Configuration;
 import java.io.File;
 
 public class TerralizationConfig {
+    /*
     public static boolean Titanpoweroregeneration;
     public static boolean Blueradiengeneration;
     public static boolean Blueradiengenerationnether;
@@ -14,7 +15,6 @@ public class TerralizationConfig {
     public static boolean EnableBluAxe;
     public static boolean EnableBluShovel;
     public static boolean EnableBluArmor;
-    public static boolean EnableCapes;
     public static float TerralizationDamage;
     public static float BluAxeDamage;
     public static float BluShovelDamage;
@@ -38,6 +38,8 @@ public class TerralizationConfig {
     public static int Blueradiengenerationendchanceveinsize;
     public static int Blueradiengenerationendminy;
     public static int Blueradiengenerationendmaxy;
+    */
+    public static boolean EnableCapes;
 
     public static void init() {
         Configuration config;
