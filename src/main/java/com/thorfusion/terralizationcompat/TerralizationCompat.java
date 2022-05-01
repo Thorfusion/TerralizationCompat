@@ -1,17 +1,17 @@
 package com.thorfusion.terralizationcompat;
 
-
-import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.relauncher.Side;
 import com.jadarstudios.developercapes.DevCapes;
 
 
-@Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION)
+@Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION, dependencies = "after:MineTweaker3;after:Mekanism")
 
 public class TerralizationCompat{
     public static final String NAME = "TerralizationCompat";
@@ -37,13 +37,15 @@ public class TerralizationCompat{
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         isMekanismLoaded = Loader.isModLoaded("Mekanism");
-        isImmersiveLoaded = Loader.isModLoaded("ImmersiveEngineering");
-        isImmersiveLoaded = Loader.isModLoaded("thorfusion");
+        // isImmersiveLoaded = Loader.isModLoaded("ImmersiveEngineering");
+        isThorfusionLoaded = Loader.isModLoaded("thorfusion");
         TerralizationConfig.init();
+        /*
         if (isMekanismLoaded & isImmersiveLoaded) {
             System.out.println("Initialization of Mekanism and Immersive engineering compat");
             TerralizationMekanismRecipes.init();
         }
+        */
     }
 
     @Mod.EventHandler
@@ -63,9 +65,16 @@ public class TerralizationCompat{
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        /*
         if(isMekanismLoaded) {
             TerralizationMekanismRecipes.postinit();
         }
-
+        */
+    }
+    @Mod.EventHandler
+    public void onServerAboutToStart(FMLServerAboutToStartEvent event) {
+        if(isMekanismLoaded) {
+            TerralizationMekanismRecipes.onServerAboutToStart();
+        }
     }
 }
