@@ -82,14 +82,6 @@ processResources
         // replace version and mcversion
         expand 'version':config.mod_version, 'mcversion':config.minecraft_version
     }
-    /*
-  from(sourceSets.main.java.com.thorfusion.titanpower.srcDirs) {
-    include 'Titanpower.java'
-
-    // replace version and mcversion
-    expand 'version':config.mod_version
-  }
-  */
   from('src/main') {
     include '*.info'
     expand 'version': config.mod_version, 'mc_version': config.minecraft_version, 'fmp_version': config.FMP_version
