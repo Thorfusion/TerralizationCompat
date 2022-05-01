@@ -42,7 +42,7 @@ public class TerralizationCompat{
         TerralizationConfig.init();
         if (isMekanismLoaded & isImmersiveLoaded) {
             System.out.println("Initialization of Mekanism and Immersive engineering compat");
-            TerralizationMekanismImmersiveRecipes.init();
+            TerralizationMekanismRecipes.init();
         }
     }
 
@@ -64,7 +64,7 @@ public class TerralizationCompat{
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         if(isMekanismLoaded) {
-            TerralizationMekanismImmersiveRecipes.postinit();
+            TerralizationMekanismRecipes.postinit();
         }
 
     }
