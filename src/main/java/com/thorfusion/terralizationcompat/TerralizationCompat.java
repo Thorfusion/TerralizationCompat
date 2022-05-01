@@ -41,8 +41,8 @@ public class TerralizationCompat{
         isImmersiveLoaded = Loader.isModLoaded("thorfusion");
         TerralizationConfig.init();
         if (isMekanismLoaded & isImmersiveLoaded) {
+            System.out.println("Initialization of Mekanism and Immersive engineering compat");
             TerralizationMekanismImmersiveRecipes.init();
-            System.out.println("Activating mekanism and immersive engineering compat");
         }
     }
 
