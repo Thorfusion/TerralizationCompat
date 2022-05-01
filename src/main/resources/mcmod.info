@@ -1,6 +1,6 @@
 [
 {
-  "modid": "thorfusioncompat",
+  "modid": "terralizationcompat",
   "name": "TerralizationCompat",
   "description": "Mod For Terralization modpack. This is a compability layer for our modpack, mainly adding mekanism recipes",
   "version": "${version}",
