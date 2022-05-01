@@ -41,7 +41,7 @@ configFile.withReader {
   project.ext.config = new ConfigSlurper().parse prop
 }
 
-version = "${config.minecraft_version}-${config.mod_version}."
+version = "${config.minecraft_version}-${config.mod_version}"
 group= "com.thorfusion.terralizationcompat" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "terralizationcompat"
 sourceCompatibility = '1.8'
