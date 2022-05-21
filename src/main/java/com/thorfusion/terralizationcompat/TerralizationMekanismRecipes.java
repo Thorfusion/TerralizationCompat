@@ -5,6 +5,7 @@ import mekanism.api.infuse.InfuseObject;
 import mekanism.api.infuse.InfuseRegistry;
 import mekanism.api.recipe.RecipeHelper;
 import mekanism.api.util.StackUtils;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.init.Items;
 import net.minecraftforge.oredict.OreDictionary;
@@ -46,16 +47,15 @@ public class TerralizationMekanismRecipes {
                 for (ItemStack ore : OreDictionary.getOres("dustNetherQuartz")) {
                     RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), new ItemStack(Items.quartz));
                 }
+                // Enrich quartz ore into 2 quartz dust'
+                for (ItemStack ore : OreDictionary.getOres("dustQuartz")) {
+                    RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
+                }
+                for (ItemStack ore : OreDictionary.getOres("dustNetherQuartz")) {
+                    RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
+                }
             }
-            // Enrich quartz ore into 2 quartz dust'
-            /*
-            for (ItemStack ore : OreDictionary.getOres("dustQuartz")) {
-                RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
-            }
-            for (ItemStack ore : OreDictionary.getOres("dustNetherQuartz")) {
-                RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
-            }
-            */
+
 
             /*
             RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size((new ItemStack(Blocks.quartz_ore), 1), new (ItemStack ore : OreDictionary.getOres("dustQuartz"));
