@@ -38,14 +38,38 @@ public class TerralizationMekanismRecipes {
         */
     }
     public static void onServerAboutToStart() {
-
-            for (ItemStack ore : OreDictionary.getOres("dustQuartz")) {
-                RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), new ItemStack(Items.quartz));
+            // Enrich quartz dust into quartz
+            if(TerralizationConfig.EnableQuartzCompat) {
+                for (ItemStack ore : OreDictionary.getOres("dustQuartz")) {
+                    RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), new ItemStack(Items.quartz));
+                }
+                for (ItemStack ore : OreDictionary.getOres("dustNetherQuartz")) {
+                    RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), new ItemStack(Items.quartz));
+                }
             }
+            // Enrich quartz ore into 2 quartz dust'
+            /*
+            for (ItemStack ore : OreDictionary.getOres("dustQuartz")) {
+                RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
+            }
+            for (ItemStack ore : OreDictionary.getOres("dustNetherQuartz")) {
+                RecipeHelper.addEnrichmentChamberRecipe(new ItemStack(Blocks.quartz_ore), StackUtils.size(ore, 2));
+            }
+            */
+
+            /*
+            RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size((new ItemStack(Blocks.quartz_ore), 1), new (ItemStack ore : OreDictionary.getOres("dustQuartz"));
+            for (ItemStack ore : OreDictionary.getOres("dustDirtyQuartz") & (ItemStack or2 : OreDictionary.getOres("dustDirtyQuartz")) {
+                RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), or2);
+            } Applied-Energistics-2-Unofficial/src/main/java/appeng/items/materials/ItemMultiMaterial.java
+            */
+            // Add gemdiamond oredict for compressed diamond
+        if(TerralizationConfig.EnableDiamondCompat) {
             for (ItemStack ore : OreDictionary.getOres("gemDiamond")) {
                 InfuseRegistry.registerInfuseObject(ore, new InfuseObject(InfuseRegistry.get("DIAMOND"), 10));
                 RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), ItemRetriever.getItem("CompressedDiamond"));
             }
+        }
 
     }
 }
