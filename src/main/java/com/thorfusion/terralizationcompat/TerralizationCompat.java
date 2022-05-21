@@ -11,7 +11,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import com.jadarstudios.developercapes.DevCapes;
 
 
-@Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION, dependencies = "after:MineTweaker3;after:Mekanism")
+@Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION, dependencies = "before:aobd;after:MineTweaker3;after:Mekanism;after:appliedenergistics2")
 
 public class TerralizationCompat{
     public static final String NAME = "TerralizationCompat";
@@ -19,17 +19,17 @@ public class TerralizationCompat{
     public static final String VERSION = "GRADLE_MODVERSION";
 
     public static boolean isMekanismLoaded;
-    public static boolean isImmersiveLoaded;
     public static boolean isThorfusionLoaded;
-    /*
+
     //Adds creative tab
-    public static CreativeTabs tabTitanpower = new CreativeTabs("tabTitanpower") {
+    /*
+    public static CreativeTabs tabTerralization = new CreativeTabs("tabTerralization") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(TitanpowerItems.TerralizationCreative).getItem();
+            return new ItemStack(TerralizationItems.quartzdust ).getItem();
         }
     };
-    */
+*/
 
     @Mod.Instance
     public static TerralizationCompat instance;
@@ -37,7 +37,6 @@ public class TerralizationCompat{
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         isMekanismLoaded = Loader.isModLoaded("Mekanism");
-        // isImmersiveLoaded = Loader.isModLoaded("ImmersiveEngineering");
         isThorfusionLoaded = Loader.isModLoaded("thorfusion");
         TerralizationConfig.init();
         /*
