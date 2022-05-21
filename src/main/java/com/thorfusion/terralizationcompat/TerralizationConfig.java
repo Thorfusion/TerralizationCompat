@@ -6,6 +6,8 @@ import net.minecraftforge.common.config.Configuration;
 import java.io.File;
 
 public class TerralizationConfig {
+    public static boolean EnableQuartzCompat;
+    public static boolean EnableDiamondCompat;
     /*
     public static boolean Titanpoweroregeneration;
     public static boolean Blueradiengeneration;
@@ -90,6 +92,8 @@ public class TerralizationConfig {
         */
         //General
         EnableCapes = config.get("General", "Capes", true).getBoolean();
+        EnableQuartzCompat = config.get("General", "QuartzCompat", true).getBoolean();
+        EnableDiamondCompat = config.get("General", "DiamondCompat", true).getBoolean();
         try {
             config.save();//saves the Configuration content into the file.
         } catch (Exception e) {
