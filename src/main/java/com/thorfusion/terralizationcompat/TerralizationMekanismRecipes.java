@@ -42,7 +42,6 @@ public class TerralizationMekanismRecipes {
                 RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), ItemRetriever.getItem("CompressedDiamond"));
             }
         }
-
     }
 }
 
