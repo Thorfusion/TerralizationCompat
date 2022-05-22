@@ -10,7 +10,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
 import cpw.mods.fml.relauncher.Side;
 
-
 @Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION, dependencies = "before:aobd;after:MineTweaker3;after:Mekanism;after:appliedenergistics2")
 
 public class TerralizationCompat {
@@ -39,12 +38,6 @@ public class TerralizationCompat {
         isMekanismLoaded = Loader.isModLoaded("Mekanism");
         isThorfusionLoaded = Loader.isModLoaded("thorfusion");
         TerralizationConfig.init();
-        /*
-        if (isMekanismLoaded & isImmersiveLoaded) {
-            System.out.println("Initialization of Mekanism and Immersive engineering compat");
-            TerralizationMekanismRecipes.init();
-        }
-        */
     }
 
     @Mod.EventHandler
