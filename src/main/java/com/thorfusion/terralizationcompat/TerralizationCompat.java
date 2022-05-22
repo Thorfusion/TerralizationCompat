@@ -56,11 +56,6 @@ public class TerralizationCompat {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        /*
-        if(isMekanismLoaded) {
-            TerralizationMekanismRecipes.postinit();
-        }
-        */
     }
 
     @Mod.EventHandler
