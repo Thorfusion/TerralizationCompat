@@ -1,19 +1,19 @@
 package com.thorfusion.terralizationcompat;
 
+import com.jadarstudios.developercapes.DevCapes;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import com.jadarstudios.developercapes.DevCapes;
+import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
+import cpw.mods.fml.relauncher.Side;
 
 
 @Mod(modid = TerralizationCompat.MODID, name = TerralizationCompat.NAME, version = TerralizationCompat.VERSION, dependencies = "before:aobd;after:MineTweaker3;after:Mekanism;after:appliedenergistics2")
 
-public class TerralizationCompat{
+public class TerralizationCompat {
     public static final String NAME = "TerralizationCompat";
     public static final String MODID = "terralizationcompat";
     public static final String VERSION = "GRADLE_MODVERSION";
@@ -54,9 +54,8 @@ public class TerralizationCompat{
             if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
                 try {
                     DevCapes.getInstance().registerConfig("https://raw.githubusercontent.com/maggi373/files/main/capes/cape.json");
-                } catch (Exception e)
-                {
-                    System.out.print("Failed to load capes\n"+e);
+                } catch (Exception e) {
+                    System.out.print("Failed to load capes\n" + e);
                 }
             }
         }
@@ -70,9 +69,10 @@ public class TerralizationCompat{
         }
         */
     }
+
     @Mod.EventHandler
     public void onServerAboutToStart(FMLServerAboutToStartEvent event) {
-        if(isMekanismLoaded) {
+        if (isMekanismLoaded) {
             TerralizationMekanismRecipes.onServerAboutToStart();
         }
     }
