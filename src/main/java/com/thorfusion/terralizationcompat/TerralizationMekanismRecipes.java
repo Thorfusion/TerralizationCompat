@@ -42,6 +42,11 @@ public class TerralizationMekanismRecipes {
                 RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), ItemRetriever.getItem("CompressedDiamond"));
             }
         }
+        if (TerralizationConfig.EnableDiamondCompat) {
+            for (ItemStack ore : OreDictionary.getOres("orePoorIron")) {
+                RecipeHelper.addPurificationChamberRecipe(ore, ItemRetriever.getItem("Clump"));
+            }
+        }
     }
 }
 
