@@ -42,9 +42,31 @@ public class TerralizationMekanismRecipes {
                 RecipeHelper.addEnrichmentChamberRecipe(StackUtils.size(ore, 1), ItemRetriever.getItem("CompressedDiamond"));
             }
         }
-        if (TerralizationConfig.EnableDiamondCompat) {
+        if (TerralizationConfig.EnablePoorOresCompat) {
             for (ItemStack ore : OreDictionary.getOres("orePoorIron")) {
-                RecipeHelper.addPurificationChamberRecipe(ore, ItemRetriever.getItem("Clump"));
+                for (ItemStack ore2 : OreDictionary.getOres("clumpIron")) {
+                    RecipeHelper.addPurificationChamberRecipe(ore, ore2);
+                }
+            }
+            for (ItemStack ore : OreDictionary.getOres("orePoorGold")) {
+                for (ItemStack ore2 : OreDictionary.getOres("clumpGold")) {
+                    RecipeHelper.addPurificationChamberRecipe(ore, ore2);
+                }
+            }
+            for (ItemStack ore : OreDictionary.getOres("orePoorCopper")) {
+                for (ItemStack ore2 : OreDictionary.getOres("clumpCopper")) {
+                    RecipeHelper.addPurificationChamberRecipe(ore, ore2);
+                }
+            }
+            for (ItemStack ore : OreDictionary.getOres("orePoorTin")) {
+                for (ItemStack ore2 : OreDictionary.getOres("clumpTin")) {
+                    RecipeHelper.addPurificationChamberRecipe(ore, ore2);
+                }
+            }
+            for (ItemStack ore : OreDictionary.getOres("orePoorLead")) {
+                for (ItemStack ore2 : OreDictionary.getOres("clumpLead")) {
+                    RecipeHelper.addPurificationChamberRecipe(ore, ore2);
+                }
             }
         }
     }
