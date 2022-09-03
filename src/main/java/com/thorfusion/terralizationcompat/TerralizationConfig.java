@@ -8,6 +8,7 @@ public class TerralizationConfig {
     public static boolean EnableQuartzCompat;
     public static boolean EnableDiamondCompat;
     public static boolean EnableCapes;
+    public static boolean EnablePoorOresCompat;
 
     public static void init() {
         Configuration config;
@@ -19,6 +20,7 @@ public class TerralizationConfig {
         EnableCapes = config.get("General", "Capes", true).getBoolean();
         EnableQuartzCompat = config.get("General", "QuartzCompat", true).getBoolean();
         EnableDiamondCompat = config.get("General", "DiamondCompat", true).getBoolean();
+        EnablePoorOresCompat = config.get("General", "PoorOresCompat", true).getBoolean();
         try {
             config.save();//saves the Configuration content into the file.
         } catch (Exception e) {
